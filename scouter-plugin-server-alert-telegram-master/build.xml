@@ -10,7 +10,9 @@
     <property name="jar-httpcore-file" value="./lib/httpcore-4.4.4.jar"/>
 
     <target name="packaging">
+        <javac classpathref=".classpath" />
         <mkdir dir="${dir.target.jar}" />
+        <mkdir dir="${dir.classes}" />
         <jar destfile="${dir.target.jar}/scouter-plugin-server-alert-telegram.jar">
             <fileset dir="${dir.classes}"/>
         </jar>
