@@ -24,7 +24,6 @@
 * **_ext\_plugin\_thread\_count_threshold_** : Thread Count의 임계치 - 기본 값은 0으로, 0일때 Thread Count의 임계치 초과 여부를 확인하지 않는다.
 * **_ext\_plugin\_ignore\_name_patterns_** : Alert 메시지 발송에서 제외할 NAME 패턴 목록 (',' 구분자 사용, * (wildcard) 사용 가능)
 * **_ext\_plugin\_ignore\_title_patterns_** : Alert 메시지 발송에서 제외할 TITLE 패턴 목록 (',' 구분자 사용, * (wildcard) 사용 가능)
-* **_ext\_plugin\_ignore\_message_patterns_** : Alert 메시지 발송에서 제외할 MESSAGE 패턴 목록 (',' 구분자 사용, * (wildcard) 사용 가능)
 * **_ext\_plugin\_ignore\_continuous_dup_alert_** : 연속된 동일 Alert을 1시간 동안 제외 - 기본 값은 false
 
 * Example
@@ -42,7 +41,6 @@ ext_plugin_thread_count_threshold=300
 
 ext_plugin_ignore_name_patterns=myTomcat1
 ext_plugin_ignore_title_patterns=Elapsed,CONNECTION,activat*
-ext_plugin_ignore_message_patterns=*(/v1/common/user/testuser)*
 ext_plugin_ignore_continuous_dup_alert=true
 ```
 
@@ -63,9 +61,6 @@ ext_plugin_ignore_continuous_dup_alert=true
     
 * Deploy
     - 빌드 후 프로젝트 하위에 out 디렉토리가 생기며, 디펜던시 라이브러리와 함께 scouter-plugin-server-alert-telegram.jar 파일을 복사하여 스카우터 서버 설치 경로 하위의 lib/ 폴더에 저장한다.
-    
-### Requirement
-* Telegram 서버가 TLSv1을 지원하지 않으므로, Scouter Server를 Java 8 이상으로 구동시켜야 합니다. 
     
 ## Appendix
 ##### Telegram 데모 채널 #####
